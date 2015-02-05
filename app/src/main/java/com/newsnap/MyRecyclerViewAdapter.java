@@ -43,13 +43,20 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, int i) {
 
+        String name = mDataset[i].getName();
+        String email = mDataset[i].getEmail();
+        String createdAt = mDataset[i].getCreatedAt();
+        String title = mDataset[i].getTitle();
+
+        if (name.equals("")) {
+            name = "Anonymous";
+        }
+
         ((TextView)viewHolder.mLinearLayout.findViewById(R.id.text_view_info))
-                .setText(mDataset[i].getName() + " - "
-                        + mDataset[i].getEmail() + " * "
-                        + mDataset[i].getCreatedAt());
+                .setText(name + " - " + email + " * " + createdAt);
 
         ((TextView)viewHolder.mLinearLayout.findViewById(R.id.text_view_body))
-                .setText(mDataset[i].getTitle());
+                .setText(title);
     }
 
     @Override
