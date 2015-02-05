@@ -113,7 +113,7 @@ public class MainActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    @OnClick(R.id.click_me_button)
+    @OnClick(R.id.refresh_threads_button)
     public void buttonClicked(View view) {
 
         updateListData();

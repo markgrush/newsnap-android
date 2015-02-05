@@ -16,7 +16,7 @@
         <Button
             android:id="@+id/refresh_threads_button"
             android:layout_weight="1"
-            android:layout_width="0"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:padding="10dp"
             android:layout_marginRight="5dp"
@@ -29,7 +29,7 @@
         <Button
             android:id="@+id/new_thread_button"
             android:layout_weight="1"
-            android:layout_width="0"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:padding="10dp"
             android:layout_marginRight="5dp"
@@ -42,7 +42,7 @@
         <Button
             android:id="@+id/random_thread_button"
             android:layout_weight="1"
-            android:layout_width="0"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:padding="10dp"
             android:layout_marginRight="5dp"

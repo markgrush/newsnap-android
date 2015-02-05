@@ -1,11 +1,17 @@
 package com.newsnap;
 
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  * Created by Mark on 1/24/2015.
@@ -52,7 +58,7 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
             name = "Anonymous";
         }
 
-        ((TextView)viewHolder.mLinearLayout.findViewById(R.id.text_view_info))
+        ((TextView) viewHolder.mLinearLayout.findViewById(R.id.text_view_info))
                 .setText(name + " - " + email + " * " + createdAt);
 
         ((TextView)viewHolder.mLinearLayout.findViewById(R.id.text_view_body))
