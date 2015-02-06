@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -12,6 +13,8 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
+import retrofit.RestAdapter;
 
 /**
  * Created by Mark on 1/24/2015.
@@ -49,6 +52,7 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, int i) {
 
+        String id = mDataset[i].getThreadId();
         String name = mDataset[i].getName();
         String email = mDataset[i].getEmail();
         String createdAt = mDataset[i].getCreatedAt();
