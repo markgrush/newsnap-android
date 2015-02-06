@@ -50,12 +50,7 @@ public class MainActivity extends ActionBarActivity {
     }
 
     public void createNewsnapService() {
-        // get data from site
-        RestAdapter adapter = new RestAdapter.Builder()
-                .setEndpoint(endpoint)
-                .build();
-
-        newsnapService = adapter.create(NewsnapService.class);
+        newsnapService = ServiceGenerator.createService(NewsnapService.class, endpoint);
     }
 
     public void createList() {
