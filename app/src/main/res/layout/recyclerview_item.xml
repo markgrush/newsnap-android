@@ -50,7 +50,7 @@
         android:layout_marginRight="5dp"
         android:layout_marginBottom="5dp"
         android:layout_gravity="right"
-        android:background="@drawable/refresh_button_shape"
+        android:background="@drawable/button_shape"
         android:text="View"
         android:textSize="18dp"
         android:textColor="@color/text_light"
