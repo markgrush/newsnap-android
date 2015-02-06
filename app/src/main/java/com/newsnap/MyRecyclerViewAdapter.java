@@ -13,8 +13,12 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
+import retrofit.Callback;
 import retrofit.RestAdapter;
+import retrofit.RetrofitError;
+import retrofit.client.Response;
 
 /**
  * Created by Mark on 1/24/2015.
@@ -67,6 +71,15 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
 
         ((TextView)viewHolder.mLinearLayout.findViewById(R.id.text_view_body))
                 .setText(title);
+
+        ((Button)viewHolder.mLinearLayout.findViewById(R.id.view_thread_button))
+                .setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Log.v(getClass().getSimpleName(), "Clicked view button of thread " + id);
+                        //TODO: start new intent and pass the thread id
+                    }
+                });
     }
 
     @Override
