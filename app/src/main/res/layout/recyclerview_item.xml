@@ -42,6 +42,20 @@
 
     </LinearLayout>
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_gravity="right"
+        android:background="@drawable/refresh_button_shape"
+        android:text="View"
+        android:textSize="18dp"
+        android:textColor="@color/text_light"
+        android:textStyle="bold"/>
+
     <View style="@style/divider"/>
 
 </LinearLayout>
