@@ -1,5 +1,7 @@
 package com.newsnap.adapters;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -18,6 +20,7 @@ import com.newsnap.items.Thread;
 public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAdapter.ViewHolder> {
 
     private Thread[] mDataset;
+    private final String EXTRA_THREAD_ID = "com.newsnap.adapters.EXTRA_THREAD_ID";
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
@@ -68,8 +71,11 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
                 .setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        Context context = v.getContext();
                         Log.v(getClass().getSimpleName(), "Clicked view button of thread " + id);
-                        //TODO: start new intent and pass the thread id
+                        Intent intent = new Intent(context, ThreadActivity.class);
+                        intent.putExtra(EXTRA_THREAD_ID, id);
+                        context.startActivity(intent);
                     }
                 });
     }
