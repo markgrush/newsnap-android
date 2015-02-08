@@ -29,7 +29,7 @@ public class MainActivity extends ActionBarActivity {
     private final String endpoint = "http://newsnap.herokuapp.com";
     private NewsnapService newsnapService = null;
 
-    @InjectView(R.id.recycler_view) RecyclerView recyclerView;
+    @InjectView(R.id.main_recycler_view) RecyclerView recyclerView;
     private MyRecyclerViewAdapter myRecyclerViewAdapter = null;
     private RecyclerView.LayoutManager layoutManager = null;
     private com.newsnap.items.Thread[] dataForRecyclerView = null;
