@@ -78,7 +78,7 @@ public class MainActivity extends ActionBarActivity {
 
                 @Override
                 public void failure(RetrofitError error) {
-                    Log.e("getThreads", "botnim failed. " + error.getMessage());
+                    Log.e(getClass().getSimpleName(), "update failed " + error.getMessage());
                 }
             });
         }
