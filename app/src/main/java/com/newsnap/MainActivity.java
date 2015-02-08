@@ -8,10 +8,11 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 
-import com.google.gson.JsonElement;
+import com.newsnap.adapters.MyRecyclerViewAdapter;
+import com.newsnap.items.Thread;
+import com.newsnap.services.NewsnapService;
+import com.newsnap.services.ServiceGenerator;
 
 import java.util.List;
 
@@ -19,11 +20,8 @@ import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnClick;
 import retrofit.Callback;
-import retrofit.RestAdapter;
 import retrofit.RetrofitError;
 import retrofit.client.Response;
-import retrofit.converter.GsonConverter;
-import rx.Observable;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -34,7 +32,7 @@ public class MainActivity extends ActionBarActivity {
     @InjectView(R.id.recycler_view) RecyclerView recyclerView;
     private MyRecyclerViewAdapter myRecyclerViewAdapter = null;
     private RecyclerView.LayoutManager layoutManager = null;
-    private Thread[] dataForRecyclerView = null;
+    private com.newsnap.items.Thread[] dataForRecyclerView = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
