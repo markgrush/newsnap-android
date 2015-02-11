@@ -19,9 +19,6 @@ import com.newsnap.items.Thread;
  */
 public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAdapter.ViewHolder> {
 
-    private final String EXTRA_THREAD_ID = "com.newsnap.adapters.EXTRA_THREAD_ID";
-    private Thread[] mDataset;
-
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
         public LinearLayout mLinearLayout;
@@ -32,6 +29,9 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
             mLinearLayout = (LinearLayout) v;
         }
     }
+
+    private final String EXTRA_THREAD_ID = "com.newsnap.adapters.EXTRA_THREAD_ID";
+    private Thread[] mDataset;
 
     public MyRecyclerViewAdapter(Thread[] mDataset) {
 

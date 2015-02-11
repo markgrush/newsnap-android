@@ -9,6 +9,7 @@ public class ThreadPost {
     private String email;
     private String title;
     private String body;
+    private String createdAt;
 
     public ThreadPost(String name, String email, String title, String body) {
         this.name = name;
@@ -47,5 +48,13 @@ public class ThreadPost {
 
     public String getBody() {
         return body;
+    }
+
+    public String getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
     }
 }
