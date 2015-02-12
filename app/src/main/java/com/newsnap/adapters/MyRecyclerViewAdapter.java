@@ -30,7 +30,7 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
         }
     }
 
-    private final String EXTRA_THREAD_ID = "com.newsnap.adapters.EXTRA_THREAD_ID";
+    public static final String EXTRA_THREAD_ID = "com.newsnap.adapters.EXTRA_THREAD_ID";
     private Thread[] mDataset;
 
     public MyRecyclerViewAdapter(Thread[] mDataset) {
