@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.newsnap.adapters.MyRecyclerViewAdapter;
 import com.newsnap.adapters.ThreadRecyclerViewAdapter;
@@ -20,6 +21,7 @@ import java.util.List;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
+import butterknife.OnClick;
 import retrofit.Callback;
 import retrofit.RetrofitError;
 import retrofit.client.Response;
@@ -30,6 +32,8 @@ public class ThreadActivity extends ActionBarActivity {
     private ThreadRecyclerViewAdapter threadRecyclerViewAdapter = null;
     private RecyclerView.LayoutManager layoutManager = null;
     private ThreadPost[] dataForRecyclerView = null;
+    private NewsnapService newsnapService = null;
+    private String threadId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,13 +43,15 @@ public class ThreadActivity extends ActionBarActivity {
         ButterKnife.inject(this);
 
         Intent intent = getIntent();
-        String threadId = intent.getStringExtra(MyRecyclerViewAdapter.EXTRA_THREAD_ID);
-        NewsnapService newsnapService = ServiceGenerator.createService(
+        threadId = intent.getStringExtra(MyRecyclerViewAdapter.EXTRA_THREAD_ID);
+        newsnapService = ServiceGenerator.createService(
                 NewsnapService.class, "http://newsnap.herokuapp.com");
         recyclerView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
+    }
 
+    public void updateListData() {
         if (newsnapService != null) {
             newsnapService.getThread(threadId, new Callback<List<ThreadPost>>() {
                 @Override
@@ -93,5 +99,12 @@ public class ThreadActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @OnClick(R.id.refresh_thread_button)
+    public void buttonClicked(View view) {
+
+        updateListData();
+
     }
 }
