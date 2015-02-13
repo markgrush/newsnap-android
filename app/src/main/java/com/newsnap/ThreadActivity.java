@@ -42,10 +42,23 @@ public class ThreadActivity extends ActionBarActivity {
 
         ButterKnife.inject(this);
 
+        getDataFromIntent();
+        createNewsnapService();
+        createList();
+        updateListData();
+    }
+
+    public void getDataFromIntent() {
         Intent intent = getIntent();
         threadId = intent.getStringExtra(MyRecyclerViewAdapter.EXTRA_THREAD_ID);
+    }
+
+    public void createNewsnapService() {
         newsnapService = ServiceGenerator.createService(
                 NewsnapService.class, "http://newsnap.herokuapp.com");
+    }
+
+    public void createList() {
         recyclerView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
