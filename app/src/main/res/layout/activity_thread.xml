@@ -7,6 +7,40 @@
     android:orientation="vertical"
     tools:context="com.newsnap.ThreadActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="5dp">
+
+        <Button
+            android:id="@+id/refresh_thread_button"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/button_shape"
+            android:text="Refresh"
+            android:textSize="18dp"
+            android:textColor="@color/text_light"
+            android:textStyle="bold"/>
+
+        <Button
+            android:id="@+id/new_reply_button"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/button_shape"
+            android:text="Reply"
+            android:textSize="18dp"
+            android:textColor="@color/text_light"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/thread_recycler_view"
         android:scrollbars="vertical"
