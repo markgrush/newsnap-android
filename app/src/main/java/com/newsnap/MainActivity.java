@@ -1,5 +1,7 @@
 package com.newsnap;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -111,5 +113,12 @@ public class MainActivity extends ActionBarActivity {
 
         updateListData();
 
+    }
+
+    @OnClick(R.id.new_thread_button)
+    public void onClickedNewThread(View view) {
+        Context context = getApplicationContext();
+        Intent intent = new Intent(context, NewThreadActivity.class);
+        context.startActivity(intent);
     }
 }
