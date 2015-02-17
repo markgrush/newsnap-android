@@ -117,7 +117,7 @@ public class MainActivity extends ActionBarActivity {
 
     @OnClick(R.id.new_thread_button)
     public void onClickedNewThread(View view) {
-        Context context = getApplicationContext();
+        Context context = view.getContext();
         Intent intent = new Intent(context, NewThreadActivity.class);
         context.startActivity(intent);
     }
