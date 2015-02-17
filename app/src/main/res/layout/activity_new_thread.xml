@@ -7,4 +7,41 @@
     android:orientation="vertical"
     tools:context="com.newsnap.NewThreadActivity">
 
+    <EditText
+        android:id="@+id/edit_text_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Name"/>
+
+    <EditText
+        android:id="@+id/edit_text_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Email"/>
+
+    <EditText
+        android:id="@+id/edit_text_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Title"/>
+
+    <EditText
+        android:id="@+id/edit_text_body"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Body"/>
+
+    <Button
+        android:id="@+id/submit_new_thread_button"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_marginRight="5dp"
+        android:background="@drawable/button_shape"
+        android:text="Submit"
+        android:textSize="18dp"
+        android:textColor="@color/text_light"
+        android:textStyle="bold"/>
+
 </LinearLayout>
