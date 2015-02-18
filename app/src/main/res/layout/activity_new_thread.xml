@@ -30,7 +30,6 @@
         android:id="@+id/edit_text_body"
         android:layout_width="match_parent"
         android:layout_height="250dp"
-        android:background="@color/primary_light"
         android:hint="Body"/>
 
     <Button
