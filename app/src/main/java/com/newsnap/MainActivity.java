@@ -82,7 +82,6 @@ public class MainActivity extends ActionBarActivity {
                     } else {
                         myRecyclerViewAdapter.updateList(dataForRecyclerView);
                     }
-
                 }
 
                 @Override
