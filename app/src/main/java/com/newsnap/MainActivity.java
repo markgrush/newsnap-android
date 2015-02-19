@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.newsnap.adapters.MyRecyclerViewAdapter;
+import com.newsnap.endpoint.NewsnapEndpoint;
 import com.newsnap.items.Thread;
 import com.newsnap.services.NewsnapService;
 import com.newsnap.services.ServiceGenerator;
@@ -22,13 +23,14 @@ import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnClick;
 import retrofit.Callback;
+import retrofit.Endpoint;
 import retrofit.RetrofitError;
 import retrofit.client.Response;
 
 
 public class MainActivity extends ActionBarActivity {
 
-    private final String endpoint = "http://newsnap.herokuapp.com";
+    private Endpoint endpoint = null;
     private NewsnapService newsnapService = null;
 
     @InjectView(R.id.main_recycler_view) RecyclerView recyclerView;
@@ -45,8 +47,13 @@ public class MainActivity extends ActionBarActivity {
         ButterKnife.inject(this);
 
         createList();
+        createEndpoint();
         createNewsnapService();
         updateListData();
+    }
+
+    public void createEndpoint() {
+        endpoint = new NewsnapEndpoint();
     }
 
     public void createNewsnapService() {

@@ -1,5 +1,6 @@
 package com.newsnap.services;
 
+import retrofit.Endpoint;
 import retrofit.RestAdapter;
 
 /**
@@ -11,9 +12,9 @@ public class ServiceGenerator {
     private ServiceGenerator() {
     }
 
-    public static <S> S createService(Class<S> serviceClass, String baseUrl) {
+    public static <S> S createService(Class<S> serviceClass, Endpoint endpoint) {
         RestAdapter adapter = new RestAdapter.Builder()
-                .setEndpoint(baseUrl)
+                .setEndpoint(endpoint)
                 .build();
 
         return adapter.create(serviceClass);

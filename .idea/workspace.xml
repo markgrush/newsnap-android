@@ -49,8 +49,21 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/newsnap/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1819">
-              <caret line="30" column="66" selection-start-line="30" selection-start-column="36" selection-end-line="30" selection-end-column="66" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1904">
+              <caret line="48" column="18" selection-start-line="48" selection-start-column="18" selection-end-line="48" selection-end-column="18" />
+              <folding>
+                <element signature="e#1648#1649#0" expanded="true" />
+                <element signature="e#1696#1697#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ThreadActivity.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/newsnap/ThreadActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-2.144144" vertical-offset="1224" max-vertical-offset="1870">
+              <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -66,11 +79,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NewsnapEndpoint.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="NewsnapEndpoint.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/newsnap/endpoint/NewsnapEndpoint.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4900901" vertical-offset="0" max-vertical-offset="555">
-              <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
+              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
               <folding>
                 <element signature="e#192#193#0" expanded="true" />
                 <element signature="e#245#246#0" expanded="true" />
@@ -707,13 +720,14 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/newsnap/items/ThreadPost.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/newsnap/adapters/MyRecyclerViewAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/recyclerview_threadpost_item.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/newsnap/ThreadActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/newsnap/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_thread.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_new_thread.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/newsnap/services/NewsnapService.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/newsnap/endpoint/NewsnapEndpoint.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/newsnap/services/ServiceGenerator.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/newsnap/MainActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/newsnap/ThreadActivity.java" />
       </list>
     </option>
   </component>
@@ -1352,10 +1366,11 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1696" height="1026" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32988507" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32988507" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1366,7 +1381,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32988507" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32988507" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32988507" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32988507" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32988507" sideWeight="0.5" order="13" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1379,7 +1394,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32988507" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1424,7 +1438,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="819" max-vertical-offset="1734">
           <caret line="80" column="13" selection-start-line="80" selection-start-column="13" selection-end-line="80" selection-end-column="13" />
-          <folding />
+          <folding>
+            <element signature="e#1648#1649#0" expanded="true" />
+            <element signature="e#1696#1697#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1446,7 +1463,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1009" max-vertical-offset="1734">
           <caret line="74" column="57" selection-start-line="74" selection-start-column="57" selection-end-line="74" selection-end-column="57" />
-          <folding />
+          <folding>
+            <element signature="e#1648#1649#0" expanded="true" />
+            <element signature="e#1696#1697#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1468,7 +1488,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="907" max-vertical-offset="1717">
           <caret line="65" column="25" selection-start-line="65" selection-start-column="25" selection-end-line="65" selection-end-column="25" />
-          <folding />
+          <folding>
+            <element signature="e#1648#1649#0" expanded="true" />
+            <element signature="e#1696#1697#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1508,7 +1531,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="918" max-vertical-offset="1717">
           <caret line="72" column="76" selection-start-line="72" selection-start-column="76" selection-end-line="72" selection-end-column="76" />
-          <folding />
+          <folding>
+            <element signature="e#1648#1649#0" expanded="true" />
+            <element signature="e#1696#1697#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1548,7 +1574,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1173">
           <caret line="61" column="5" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
-          <folding />
+          <folding>
+            <element signature="e#1648#1649#0" expanded="true" />
+            <element signature="e#1696#1697#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1580,7 +1609,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="935">
           <caret line="40" column="49" selection-start-line="40" selection-start-column="49" selection-end-line="40" selection-end-column="49" />
-          <folding />
+          <folding>
+            <element signature="e#1648#1649#0" expanded="true" />
+            <element signature="e#1696#1697#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1727,13 +1759,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/newsnap/ThreadActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1785">
-          <caret line="47" column="25" selection-start-line="47" selection-start-column="25" selection-end-line="47" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_thread.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-13.851851" vertical-offset="0" max-vertical-offset="1003">
@@ -1783,14 +1808,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/newsnap/services/ServiceGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4900901" vertical-offset="0" max-vertical-offset="555">
-          <caret line="16" column="25" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/newsnap/services/NewsnapService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="578">
@@ -1799,24 +1816,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/newsnap/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1819">
-          <caret line="30" column="66" selection-start-line="30" selection-start-column="36" selection-end-line="30" selection-end-column="66" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/newsnap/endpoint/NewsnapEndpoint.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4900901" vertical-offset="0" max-vertical-offset="555">
-          <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
           <folding>
             <element signature="e#192#193#0" expanded="true" />
             <element signature="e#245#246#0" expanded="true" />
             <element signature="e#290#291#0" expanded="true" />
             <element signature="e#322#323#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/newsnap/services/ServiceGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4900901" vertical-offset="0" max-vertical-offset="555">
+          <caret line="16" column="38" selection-start-line="16" selection-start-column="38" selection-end-line="16" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/newsnap/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1904">
+          <caret line="48" column="18" selection-start-line="48" selection-start-column="18" selection-end-line="48" selection-end-column="18" />
+          <folding>
+            <element signature="e#1648#1649#0" expanded="true" />
+            <element signature="e#1696#1697#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/newsnap/ThreadActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.144144" vertical-offset="1224" max-vertical-offset="1870">
+          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+          <folding />
         </state>
       </provider>
     </entry>
