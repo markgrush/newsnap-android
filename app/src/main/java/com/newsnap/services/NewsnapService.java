@@ -27,14 +27,14 @@ public interface NewsnapService {
     public void getThread(@Path("thread") String threadId, Callback<List<ThreadPost>> callback);
 
     @FormUrlEncoded
-    @POST("/")
+    @POST("/mobile")
     public void createNewThread(
             @Field("op-name") String name, @Field("op-email") String email,
             @Field("title") String title, @Field("news") String news,
             Callback<Response> responseCallback);
 
     @FormUrlEncoded
-    @POST("/{id}")
+    @POST("/mobile/{id}")
     public void createNewReply(
             @Path("id") String id, @Field("replier-name") String name,
             @Field("replier-email") String email, @Field("reply") String reply,
