@@ -73,6 +73,9 @@ public class NewThreadActivity extends ActionBarActivity {
             @Override
             public void failure(RetrofitError error) {
                 Log.e(getClass().getSimpleName(), "createNewThread failure!" + error.getMessage());
+                Log.e(getClass().getSimpleName(), error.getCause().toString());
+                Log.e(getClass().getSimpleName(), error.getResponse().getReason());
+                Log.e(getClass().getSimpleName(), error.getResponse().getHeaders().toString());
             }
         });
     }

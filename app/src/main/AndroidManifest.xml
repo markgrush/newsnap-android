@@ -34,6 +34,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.newsnap.MainActivity" />
         </activity>
+        <activity
+            android:name=".NewReplyActivity"
+            android:label="@string/title_activity_new_reply"
+            android:parentActivityName=".ThreadActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.newsnap.ThreadActivity" />
+        </activity>
     </application>
 
 </manifest>

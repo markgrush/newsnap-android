@@ -1,5 +1,6 @@
 package com.newsnap;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -127,6 +128,15 @@ public class ThreadActivity extends ActionBarActivity {
     public void buttonClicked(View view) {
 
         updateListData();
+
+    }
+
+    @OnClick(R.id.new_reply_button)
+    public void onClickedNewReply(View view) {
+
+        Context context = view.getContext();
+        Intent intent = new Intent(context, NewReplyActivity.class);
+        context.startActivity(intent);
 
     }
 }
