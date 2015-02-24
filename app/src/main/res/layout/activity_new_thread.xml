@@ -12,25 +12,30 @@
         android:id="@+id/edit_text_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Name"/>
+        android:hint="Name"
+        android:maxLength="50"/>
 
     <EditText
         android:id="@+id/edit_text_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Email"/>
+        android:hint="Email"
+        android:maxLength="50"/>
 
     <EditText
         android:id="@+id/edit_text_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Title"/>
+        android:hint="Title"
+        android:maxLength="120"/>
 
     <EditText
         android:id="@+id/edit_text_body"
         android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:hint="Body"/>
+        android:layout_height="wrap_content"
+        android:hint="Body"
+        android:maxLines="5"
+        android:maxLength="500"/>
 
     <Button
         android:id="@+id/submit_new_thread_button"
