@@ -34,9 +34,9 @@ public interface NewsnapService {
             Callback<Response> responseCallback);
 
     @FormUrlEncoded
-    @POST("/mobile/{id}")
+    @POST("/mobile/{thread}")
     public void createNewReply(
-            @Path("id") String id, @Field("replier-name") String name,
+            @Path("thread") String threadId, @Field("id") String id, @Field("replier-name") String name,
             @Field("replier-email") String email, @Field("reply") String reply,
             Callback<Response> responseCallback);
 

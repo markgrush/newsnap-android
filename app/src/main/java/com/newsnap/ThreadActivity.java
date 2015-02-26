@@ -31,6 +31,8 @@ import retrofit.client.Response;
 
 public class ThreadActivity extends ActionBarActivity {
 
+    public static final String EXTRA_THREAD_ID = "com.newsnap.ThreadActivity.EXTRA_THREAD_ID";
+
     private Endpoint endpoint = null;
     private NewsnapService newsnapService = null;
 
@@ -136,6 +138,7 @@ public class ThreadActivity extends ActionBarActivity {
 
         Context context = view.getContext();
         Intent intent = new Intent(context, NewReplyActivity.class);
+        intent.putExtra(EXTRA_THREAD_ID, threadId);
         context.startActivity(intent);
 
     }
