@@ -93,6 +93,16 @@ public class MainActivity extends ActionBarActivity {
     }
 
     @Override
+    protected void onResume() {
+        super.onResume();
+        // if we come back from submitting a new thread, then we want to update the list
+        // to see the new thread right away, and not have to manually refresh it
+        if (dataForRecyclerView != null) {
+            updateListData();
+        }
+    }
+
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);

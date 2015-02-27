@@ -72,16 +72,19 @@ public class NewReplyActivity extends ActionBarActivity {
         newsnapService.createNewReply(threadId, threadId, name, email, body, new Callback<Response>() {
             @Override
             public void success(Response response, Response response2) {
-                Log.i(getClass().getSimpleName(), "createNewReply success!" + response.getStatus());
+                Log.i(getClass().getSimpleName(), "createNewReply success! " + response.getStatus());
                 finish();
             }
 
             @Override
             public void failure(RetrofitError error) {
-                Log.e(getClass().getSimpleName(), "createNewReply failure!" + error.getMessage());
+                Log.e(getClass().getSimpleName(), "createNewReply failure! " + error.getMessage());
                 Log.e(getClass().getSimpleName(), error.getCause().toString());
-                Log.e(getClass().getSimpleName(), error.getResponse().getReason());
-                Log.e(getClass().getSimpleName(), error.getResponse().getHeaders().toString());
+                Response response = error.getResponse();
+                if (response != null) {
+                    Log.e(getClass().getSimpleName(), error.getResponse().getReason());
+                    Log.e(getClass().getSimpleName(), error.getResponse().getHeaders().toString());
+                }
             }
         });
     }

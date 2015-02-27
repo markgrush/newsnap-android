@@ -56,6 +56,16 @@ public class ThreadActivity extends ActionBarActivity {
         updateListData();
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        // if we come back from submitting a reply, then we want to update the list
+        // to see the new reply right away, and not have to manually refresh it
+        if (dataForRecyclerView != null) {
+            updateListData();
+        }
+    }
+
     public void getDataFromIntent() {
         Intent intent = getIntent();
         threadId = intent.getStringExtra(MyRecyclerViewAdapter.EXTRA_THREAD_ID);
