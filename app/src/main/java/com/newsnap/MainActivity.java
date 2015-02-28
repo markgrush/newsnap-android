@@ -18,6 +18,7 @@ import com.newsnap.services.NewsnapService;
 import com.newsnap.services.ServiceGenerator;
 
 import java.util.List;
+import java.util.Random;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -135,6 +136,21 @@ public class MainActivity extends ActionBarActivity {
     public void onClickedNewThread(View view) {
         Context context = view.getContext();
         Intent intent = new Intent(context, NewThreadActivity.class);
+        context.startActivity(intent);
+    }
+
+    @OnClick(R.id.random_thread_button)
+    public void onClickedRandomThread(View view) {
+        
+        // get random thread id from available threads
+        Random random = new Random();
+        int threadIndex = random.nextInt(dataForRecyclerView.length);
+        String randomThreadId = dataForRecyclerView[threadIndex].getThreadId();
+
+        // start the thread
+        Context context = view.getContext();
+        Intent intent = new Intent(context, ThreadActivity.class);
+        intent.putExtra(MyRecyclerViewAdapter.EXTRA_THREAD_ID, randomThreadId);
         context.startActivity(intent);
     }
 }
