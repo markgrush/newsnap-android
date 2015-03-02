@@ -19,6 +19,7 @@ import com.newsnap.services.ServiceGenerator;
 
 import java.util.List;
 import java.util.Random;
+import java.util.regex.Pattern;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -27,6 +28,8 @@ import retrofit.Callback;
 import retrofit.Endpoint;
 import retrofit.RetrofitError;
 import retrofit.client.Response;
+import rx.Observable;
+import rx.functions.Action1;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -141,7 +144,20 @@ public class MainActivity extends ActionBarActivity {
 
     @OnClick(R.id.random_thread_button)
     public void onClickedRandomThread(View view) {
-        
+
+        Observable.just(new Random().nextInt(dataForRecyclerView.length))
+                .map(randomNumber -> dataForRecyclerView[randomNumber].getThreadId())
+                .subscribe(new Action1<String>() {
+                    @Override
+                    public void call(String threadId) {
+                        Context context = view.getContext();
+                        Intent intent = new Intent(context, ThreadActivity.class);
+                        intent.putExtra(MyRecyclerViewAdapter.EXTRA_THREAD_ID, threadId);
+                        context.startActivity(intent);
+                    }
+                });
+
+/*
         // get random thread id from available threads
         Random random = new Random();
         int threadIndex = random.nextInt(dataForRecyclerView.length);
@@ -151,6 +167,6 @@ public class MainActivity extends ActionBarActivity {
         Context context = view.getContext();
         Intent intent = new Intent(context, ThreadActivity.class);
         intent.putExtra(MyRecyclerViewAdapter.EXTRA_THREAD_ID, randomThreadId);
-        context.startActivity(intent);
+        context.startActivity(intent); */
     }
 }
