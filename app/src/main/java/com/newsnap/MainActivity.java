@@ -156,17 +156,5 @@ public class MainActivity extends ActionBarActivity {
                         context.startActivity(intent);
                     }
                 });
-
-/*
-        // get random thread id from available threads
-        Random random = new Random();
-        int threadIndex = random.nextInt(dataForRecyclerView.length);
-        String randomThreadId = dataForRecyclerView[threadIndex].getThreadId();
-
-        // start the thread
-        Context context = view.getContext();
-        Intent intent = new Intent(context, ThreadActivity.class);
-        intent.putExtra(MyRecyclerViewAdapter.EXTRA_THREAD_ID, randomThreadId);
-        context.startActivity(intent); */
     }
 }

@@ -1,5 +1,6 @@
 package com.newsnap.adapters;
 
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +10,11 @@ import android.widget.TextView;
 
 import com.newsnap.R;
 import com.newsnap.items.*;
+
+import org.w3c.dom.Text;
+
+import rx.Observable;
+import rx.functions.Func1;
 
 /**
  * Created by Mark on 2/10/2015.
@@ -56,6 +62,26 @@ public class ThreadRecyclerViewAdapter
 
         ((TextView) viewHolder.mLinearLayout.findViewById(R.id.text_view_info))
                 .setText(name + " - " + email + " * " + createdAt);
+
+        // first post of every thread should contain a title.
+        // here we insert the title into the first post, inflated from a separate view.
+        if (i == 0) {
+
+            Observable.just(viewHolder.mLinearLayout.getContext())
+                    .map(context -> (LayoutInflater)
+                            context.getSystemService(Context.LAYOUT_INFLATER_SERVICE))
+                    .map(inflater -> inflater.inflate(R.layout.threadpost_op_title, null))
+                    .map(view -> (TextView) view.findViewById(R.id.op_title))
+                    .map(title -> {
+                        title.setText(mDataset[i].getTitle());
+                        return title;
+                    })
+                    .subscribe(title -> {
+                        ((LinearLayout) viewHolder.mLinearLayout
+                                .findViewById(R.id.threadpost_body_layout))
+                                .addView(title.getRootView(), 0);
+                    });
+        }
 
         ((TextView)viewHolder.mLinearLayout.findViewById(R.id.text_view_body))
                 .setText(body);
