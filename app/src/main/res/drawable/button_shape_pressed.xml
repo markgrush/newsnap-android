@@ -10,5 +10,5 @@
         android:bottomRightRadius="5dp" />
 
     <solid
-        android:color="@color/accent"/>
+        android:color="@color/accent_dark"/>
 </shape>
