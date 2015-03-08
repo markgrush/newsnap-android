@@ -15,7 +15,7 @@
         android:background="@color/primary"
         android:layout_margin="5dp">
 
-        <Button
+        <ImageButton
             android:id="@+id/refresh_threads_button"
             android:layout_weight="1"
             android:layout_width="0dp"
@@ -26,7 +26,8 @@
             android:text="Refresh Threads"
             android:textSize="18dp"
             android:textColor="@color/text_light"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            />
 
         <Button
             android:id="@+id/new_thread_button"
