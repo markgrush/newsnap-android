@@ -11,7 +11,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.newsnap.adapters.MyRecyclerViewAdapter;
+import com.newsnap.adapters.ThreadListRecyclerViewAdapter;
 import com.newsnap.endpoint.NewsnapEndpoint;
 import com.newsnap.items.Thread;
 import com.newsnap.services.NewsnapService;
@@ -19,7 +19,6 @@ import com.newsnap.services.ServiceGenerator;
 
 import java.util.List;
 import java.util.Random;
-import java.util.regex.Pattern;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -38,7 +37,7 @@ public class MainActivity extends ActionBarActivity {
     private NewsnapService newsnapService = null;
 
     @InjectView(R.id.main_recycler_view) RecyclerView recyclerView;
-    private MyRecyclerViewAdapter myRecyclerViewAdapter = null;
+    private ThreadListRecyclerViewAdapter threadListRecyclerViewAdapter = null;
     private RecyclerView.LayoutManager layoutManager = null;
     private com.newsnap.items.Thread[] dataForRecyclerView = null;
 
@@ -79,12 +78,12 @@ public class MainActivity extends ActionBarActivity {
                     dataForRecyclerView = new Thread[threads.size()];
                     threads.toArray(dataForRecyclerView);
 
-                    if (myRecyclerViewAdapter == null) {
+                    if (threadListRecyclerViewAdapter == null) {
                         // init recycler view and provide it with the newly acquired data
-                        myRecyclerViewAdapter = new MyRecyclerViewAdapter(dataForRecyclerView);
-                        recyclerView.setAdapter(myRecyclerViewAdapter);
+                        threadListRecyclerViewAdapter = new ThreadListRecyclerViewAdapter(dataForRecyclerView);
+                        recyclerView.setAdapter(threadListRecyclerViewAdapter);
                     } else {
-                        myRecyclerViewAdapter.updateList(dataForRecyclerView);
+                        threadListRecyclerViewAdapter.updateList(dataForRecyclerView);
                     }
                 }
 
@@ -152,7 +151,7 @@ public class MainActivity extends ActionBarActivity {
                     public void call(String threadId) {
                         Context context = view.getContext();
                         Intent intent = new Intent(context, ThreadActivity.class);
-                        intent.putExtra(MyRecyclerViewAdapter.EXTRA_THREAD_ID, threadId);
+                        intent.putExtra(ThreadListRecyclerViewAdapter.EXTRA_THREAD_ID, threadId);
                         context.startActivity(intent);
                     }
                 });

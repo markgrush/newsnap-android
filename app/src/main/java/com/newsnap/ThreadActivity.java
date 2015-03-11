@@ -11,11 +11,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.newsnap.adapters.MyRecyclerViewAdapter;
+import com.newsnap.adapters.ThreadListRecyclerViewAdapter;
 import com.newsnap.adapters.ThreadRecyclerViewAdapter;
 import com.newsnap.endpoint.NewsnapEndpoint;
 import com.newsnap.items.*;
-import com.newsnap.items.Thread;
 import com.newsnap.services.NewsnapService;
 import com.newsnap.services.ServiceGenerator;
 
@@ -68,7 +67,7 @@ public class ThreadActivity extends ActionBarActivity {
 
     public void getDataFromIntent() {
         Intent intent = getIntent();
-        threadId = intent.getStringExtra(MyRecyclerViewAdapter.EXTRA_THREAD_ID);
+        threadId = intent.getStringExtra(ThreadListRecyclerViewAdapter.EXTRA_THREAD_ID);
     }
 
     public void createEndpoint() {
