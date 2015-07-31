@@ -3,6 +3,7 @@ package com.newsnap.activities;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -38,10 +39,15 @@ public class MainActivity extends AppCompatActivity {
     private Endpoint endpoint = null;
     private NewsnapService newsnapService = null;
 
-    @Bind(R.id.main_recycler_view) RecyclerView recyclerView;
+    @Bind(R.id.main_recycler_view)
+    RecyclerView recyclerView;
+
     private ThreadListRecyclerViewAdapter threadListRecyclerViewAdapter = null;
     private RecyclerView.LayoutManager layoutManager = null;
     private com.newsnap.items.Thread[] dataForRecyclerView = null;
+
+    @Bind(R.id.swipe_refresh_layout)
+    SwipeRefreshLayout swipeRefreshLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +56,13 @@ public class MainActivity extends AppCompatActivity {
 
         // don't forget to add this line - otherwise annotations won't work
         ButterKnife.bind(this);
+
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                updateListData();
+            }
+        });
 
         createList();
         createEndpoint();
@@ -95,6 +108,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
         }
+        swipeRefreshLayout.setRefreshing(false);
     }
 
     @Override
@@ -127,13 +141,6 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
-    }
-
-    @OnClick(R.id.refresh_threads_button)
-    public void buttonClicked(View view) {
-
-        updateListData();
-
     }
 
     @OnClick(R.id.new_thread_button)
