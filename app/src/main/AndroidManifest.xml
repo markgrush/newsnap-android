@@ -20,27 +20,15 @@
         </activity>
         <activity
             android:name=".activities.ThreadActivity"
-            android:label="@string/title_activity_thread"
-            android:parentActivityName=".activities.MainActivity" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".activities.MainActivity" />
+            android:label="@string/title_activity_thread">
         </activity>
         <activity
             android:name=".activities.NewThreadActivity"
-            android:label="@string/title_activity_new_thread"
-            android:parentActivityName=".activities.MainActivity" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".activities.MainActivity" />
+            android:label="@string/title_activity_new_thread">
         </activity>
         <activity
             android:name=".activities.NewReplyActivity"
-            android:label="@string/title_activity_new_reply"
-            android:parentActivityName=".activities.ThreadActivity" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".activities.ThreadActivity" />
+            android:label="@string/title_activity_new_reply">
         </activity>
     </application>
 

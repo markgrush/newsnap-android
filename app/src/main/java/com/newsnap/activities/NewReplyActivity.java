@@ -1,5 +1,6 @@
 package com.newsnap.activities;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -59,7 +60,6 @@ public class NewReplyActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
-
 
     @OnClick(R.id.submit_new_reply_button)
     public void onSubmitNewReply(View view) {
