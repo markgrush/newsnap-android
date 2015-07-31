@@ -14,22 +14,23 @@ import com.newsnap.items.*;
 import org.w3c.dom.Text;
 
 import rx.Observable;
+import rx.functions.Action1;
 import rx.functions.Func1;
 
 /**
  * Created by Mark on 2/10/2015.
  */
-public class ThreadRecyclerViewAdapter
-        extends RecyclerView.Adapter<ThreadRecyclerViewAdapter.ViewHolder> {
+public class ThreadRecyclerViewAdapter extends
+        RecyclerView.Adapter<ThreadRecyclerViewAdapter.ViewHolder> {
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
         public LinearLayout mLinearLayout;
 
-        public ViewHolder(View v) {
+        public ViewHolder(View view) {
 
-            super(v);
-            mLinearLayout = (LinearLayout) v;
+            super(view);
+            mLinearLayout = (LinearLayout) view;
         }
     }
 
@@ -42,15 +43,15 @@ public class ThreadRecyclerViewAdapter
 
     @Override
     public ThreadRecyclerViewAdapter.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-        View v = LayoutInflater.from(viewGroup.getContext())
+        View view = LayoutInflater.from(viewGroup.getContext())
                 .inflate(R.layout.recyclerview_threadpost_item, viewGroup, false);
 
-        ViewHolder vh = new ThreadRecyclerViewAdapter.ViewHolder(v);
-        return vh;
+        ViewHolder viewHolder = new ThreadRecyclerViewAdapter.ViewHolder(view);
+        return viewHolder;
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder viewHolder, int i) {
+    public void onBindViewHolder(final ViewHolder viewHolder, final int i) {
         String name = mDataset[i].getName();
         String email = mDataset[i].getEmail();
         String createdAt = mDataset[i].getCreatedAt();
@@ -68,18 +69,39 @@ public class ThreadRecyclerViewAdapter
         if (i == 0) {
 
             Observable.just(viewHolder.mLinearLayout.getContext())
-                    .map(context -> (LayoutInflater)
-                            context.getSystemService(Context.LAYOUT_INFLATER_SERVICE))
-                    .map(inflater -> inflater.inflate(R.layout.threadpost_op_title, null))
-                    .map(view -> (TextView) view.findViewById(R.id.op_title))
-                    .map(title -> {
-                        title.setText(mDataset[i].getTitle());
-                        return title;
+                    .map(new Func1<Context, LayoutInflater>() {
+                        @Override
+                        public LayoutInflater call(Context context) {
+                            return (LayoutInflater) context.getSystemService(
+                                    Context.LAYOUT_INFLATER_SERVICE);
+                        }
                     })
-                    .subscribe(title -> {
-                        ((LinearLayout) viewHolder.mLinearLayout
-                                .findViewById(R.id.threadpost_body_layout))
-                                .addView(title.getRootView(), 0);
+                    .map(new Func1<LayoutInflater, View>() {
+                        @Override
+                        public View call(LayoutInflater layoutInflater) {
+                            return layoutInflater.inflate(R.layout.threadpost_op_title, null);
+                        }
+                    })
+                    .map(new Func1<View, TextView>() {
+                        @Override
+                        public TextView call(View view) {
+                            return (TextView) view.findViewById(R.id.op_title);
+                        }
+                    })
+                    .map(new Func1<TextView, TextView>() {
+                        @Override
+                        public TextView call(TextView textView) {
+                            textView.setText(mDataset[i].getTitle());
+                            return textView;
+                        }
+                    })
+                    .subscribe(new Action1<TextView>() {
+                        @Override
+                        public void call(TextView textView) {
+                            ((LinearLayout) viewHolder.mLinearLayout
+                                    .findViewById(R.id.threadpost_body_layout))
+                                    .addView(textView.getRootView(), 0);
+                        }
                     });
         }
 

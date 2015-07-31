@@ -26,7 +26,7 @@ public class NewThreadActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_thread);
 
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
     }
 
 

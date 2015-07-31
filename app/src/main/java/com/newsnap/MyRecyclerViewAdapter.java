@@ -76,7 +76,6 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
                 .setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Log.v(getClass().getSimpleName(), "Clicked view button of thread " + id);
                         //TODO: start new intent and pass the thread id
                     }
                 });

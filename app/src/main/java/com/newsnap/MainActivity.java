@@ -2,8 +2,8 @@ package com.newsnap;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -20,8 +20,8 @@ import com.newsnap.services.ServiceGenerator;
 import java.util.List;
 import java.util.Random;
 
+import butterknife.Bind;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 import butterknife.OnClick;
 import retrofit.Callback;
 import retrofit.Endpoint;
@@ -29,14 +29,15 @@ import retrofit.RetrofitError;
 import retrofit.client.Response;
 import rx.Observable;
 import rx.functions.Action1;
+import rx.functions.Func1;
 
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends AppCompatActivity {
 
     private Endpoint endpoint = null;
     private NewsnapService newsnapService = null;
 
-    @InjectView(R.id.main_recycler_view) RecyclerView recyclerView;
+    @Bind(R.id.main_recycler_view) RecyclerView recyclerView;
     private ThreadListRecyclerViewAdapter threadListRecyclerViewAdapter = null;
     private RecyclerView.LayoutManager layoutManager = null;
     private com.newsnap.items.Thread[] dataForRecyclerView = null;
@@ -47,7 +48,7 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
 
         // don't forget to add this line - otherwise annotations won't work
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
 
         createList();
         createEndpoint();
@@ -135,17 +136,22 @@ public class MainActivity extends ActionBarActivity {
     }
 
     @OnClick(R.id.new_thread_button)
-    public void onClickedNewThread(View view) {
+    public void onClickedNewThread(final View view) {
         Context context = view.getContext();
         Intent intent = new Intent(context, NewThreadActivity.class);
         context.startActivity(intent);
     }
 
     @OnClick(R.id.random_thread_button)
-    public void onClickedRandomThread(View view) {
+    public void onClickedRandomThread(final View view) {
 
         Observable.just(new Random().nextInt(dataForRecyclerView.length))
-                .map(randomNumber -> dataForRecyclerView[randomNumber].getThreadId())
+                .map(new Func1<Integer, String>() {
+                    @Override
+                    public String call(Integer randomNumber) {
+                        return dataForRecyclerView[randomNumber].getThreadId();
+                    }
+                })
                 .subscribe(new Action1<String>() {
                     @Override
                     public void call(String threadId) {

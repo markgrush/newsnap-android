@@ -14,14 +14,14 @@ import android.view.View;
 import com.newsnap.adapters.ThreadListRecyclerViewAdapter;
 import com.newsnap.adapters.ThreadRecyclerViewAdapter;
 import com.newsnap.endpoint.NewsnapEndpoint;
-import com.newsnap.items.*;
+import com.newsnap.items.ThreadPost;
 import com.newsnap.services.NewsnapService;
 import com.newsnap.services.ServiceGenerator;
 
 import java.util.List;
 
+import butterknife.Bind;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 import butterknife.OnClick;
 import retrofit.Callback;
 import retrofit.Endpoint;
@@ -35,7 +35,7 @@ public class ThreadActivity extends ActionBarActivity {
     private Endpoint endpoint = null;
     private NewsnapService newsnapService = null;
 
-    @InjectView(R.id.thread_recycler_view) RecyclerView recyclerView;
+    @Bind(R.id.thread_recycler_view) RecyclerView recyclerView;
     private ThreadRecyclerViewAdapter threadRecyclerViewAdapter = null;
     private RecyclerView.LayoutManager layoutManager = null;
     private ThreadPost[] dataForRecyclerView = null;
@@ -46,7 +46,7 @@ public class ThreadActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_thread);
 
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
 
         getDataFromIntent();
         createEndpoint();

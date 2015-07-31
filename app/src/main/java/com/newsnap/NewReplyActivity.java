@@ -29,7 +29,7 @@ public class NewReplyActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_reply);
 
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
 
         Intent intent = getIntent();
         threadId = intent.getStringExtra(ThreadActivity.EXTRA_THREAD_ID);

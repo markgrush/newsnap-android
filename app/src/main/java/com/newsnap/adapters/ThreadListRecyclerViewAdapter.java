@@ -52,7 +52,7 @@ public class ThreadListRecyclerViewAdapter
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, int i) {
 
-        String id = mDataset[i].getThreadId();
+        final String id = mDataset[i].getThreadId();
         String name = mDataset[i].getName();
         String email = mDataset[i].getEmail();
         String createdAt = mDataset[i].getCreatedAt();
