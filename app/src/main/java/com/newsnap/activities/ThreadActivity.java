@@ -3,6 +3,7 @@ package com.newsnap.activities;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -36,7 +37,12 @@ public class ThreadActivity extends AppCompatActivity {
     private Endpoint endpoint = null;
     private NewsnapService newsnapService = null;
 
-    @Bind(R.id.thread_recycler_view) RecyclerView recyclerView;
+    @Bind(R.id.thread_recycler_view)
+    RecyclerView recyclerView;
+
+    @Bind(R.id.swipe_refresh_layout)
+    SwipeRefreshLayout swipeRefreshLayout;
+
     private ThreadRecyclerViewAdapter threadRecyclerViewAdapter = null;
     private RecyclerView.LayoutManager layoutManager = null;
     private ThreadPost[] dataForRecyclerView = null;
@@ -48,6 +54,13 @@ public class ThreadActivity extends AppCompatActivity {
         setContentView(R.layout.activity_thread);
 
         ButterKnife.bind(this);
+
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                updateListData();
+            }
+        });
 
         getDataFromIntent();
         createEndpoint();
@@ -111,6 +124,7 @@ public class ThreadActivity extends AppCompatActivity {
                 }
             });
         }
+        swipeRefreshLayout.setRefreshing(false);
     }
 
 
