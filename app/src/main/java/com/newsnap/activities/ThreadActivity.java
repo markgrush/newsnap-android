@@ -20,6 +20,7 @@ import com.newsnap.items.ThreadPost;
 import com.newsnap.services.NewsnapService;
 import com.newsnap.services.ServiceGenerator;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.Bind;
@@ -45,7 +46,7 @@ public class ThreadActivity extends AppCompatActivity {
 
     private ThreadRecyclerViewAdapter threadRecyclerViewAdapter = null;
     private RecyclerView.LayoutManager layoutManager = null;
-    private ThreadPost[] dataForRecyclerView = null;
+    private List<ThreadPost> dataForRecyclerView = null;
     private String threadId;
 
     @Override
@@ -105,8 +106,7 @@ public class ThreadActivity extends AppCompatActivity {
                 @Override
                 public void success(List<ThreadPost> threads, Response response) {
 
-                    dataForRecyclerView = new ThreadPost[threads.size()];
-                    threads.toArray(dataForRecyclerView);
+                    dataForRecyclerView = new ArrayList<ThreadPost>();
 
                     if (threadRecyclerViewAdapter == null) {
                         // init recycler view and provide it with the newly acquired data
