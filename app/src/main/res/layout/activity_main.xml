@@ -1,11 +1,10 @@
-<LinearLayout
+<android.support.design.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    style="@style/AppTheme"
-    android:background="@color/primary"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:fitsSystemWindows="true"
     tools:context=".MainActivity">
 
     <LinearLayout
@@ -30,19 +29,6 @@
             />
 
         <Button
-            android:id="@+id/new_thread_button"
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:layout_marginRight="5dp"
-            android:background="@drawable/button_selector"
-            android:text="New Thread"
-            android:textSize="18dp"
-            android:textColor="@color/text_light"
-            android:textStyle="bold"/>
-
-        <Button
             android:id="@+id/random_thread_button"
             android:layout_weight="1"
             android:layout_width="0dp"
@@ -61,7 +47,18 @@
         android:scrollbars="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/primary"/>
+        android:background="@color/primary"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/new_thread_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        android:src="@drawable/pen"
+        app:elevation="4dp"
+        app:borderWidth="0dp"
+        app:fabSize="normal" />
 
 
-</LinearLayout>
+</android.support.design.widget.CoordinatorLayout>

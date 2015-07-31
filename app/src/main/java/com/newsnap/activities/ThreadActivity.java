@@ -1,9 +1,9 @@
-package com.newsnap;
+package com.newsnap.activities;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -11,6 +11,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.newsnap.R;
 import com.newsnap.adapters.ThreadListRecyclerViewAdapter;
 import com.newsnap.adapters.ThreadRecyclerViewAdapter;
 import com.newsnap.endpoint.NewsnapEndpoint;
@@ -28,9 +29,9 @@ import retrofit.Endpoint;
 import retrofit.RetrofitError;
 import retrofit.client.Response;
 
-public class ThreadActivity extends ActionBarActivity {
+public class ThreadActivity extends AppCompatActivity {
 
-    public static final String EXTRA_THREAD_ID = "com.newsnap.ThreadActivity.EXTRA_THREAD_ID";
+    public static final String EXTRA_THREAD_ID = "com.newsnap.activities.ThreadActivity.EXTRA_THREAD_ID";
 
     private Endpoint endpoint = null;
     private NewsnapService newsnapService = null;
@@ -136,15 +137,12 @@ public class ThreadActivity extends ActionBarActivity {
     }
 
     @OnClick(R.id.refresh_thread_button)
-    public void buttonClicked(View view) {
-
+    public void onClickedRefresh(View view) {
         updateListData();
-
     }
 
     @OnClick(R.id.new_reply_button)
     public void onClickedNewReply(View view) {
-
         Context context = view.getContext();
         Intent intent = new Intent(context, NewReplyActivity.class);
         intent.putExtra(EXTRA_THREAD_ID, threadId);

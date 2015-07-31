@@ -12,6 +12,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.newsnap.*;
+import com.newsnap.activities.ThreadActivity;
 import com.newsnap.items.Thread;
 
 /**

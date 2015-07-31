@@ -1,4 +1,4 @@
-package com.newsnap;
+package com.newsnap.activities;
 
 import android.content.Context;
 import android.content.Intent;
@@ -11,6 +11,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.newsnap.R;
 import com.newsnap.adapters.ThreadListRecyclerViewAdapter;
 import com.newsnap.endpoint.NewsnapEndpoint;
 import com.newsnap.items.Thread;

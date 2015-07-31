@@ -10,7 +10,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".MainActivity"
+            android:name=".activities.MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,28 +19,28 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ThreadActivity"
+            android:name=".activities.ThreadActivity"
             android:label="@string/title_activity_thread"
-            android:parentActivityName=".MainActivity" >
+            android:parentActivityName=".activities.MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.newsnap.MainActivity" />
+                android:value=".activities.MainActivity" />
         </activity>
         <activity
-            android:name=".NewThreadActivity"
+            android:name=".activities.NewThreadActivity"
             android:label="@string/title_activity_new_thread"
-            android:parentActivityName=".MainActivity" >
+            android:parentActivityName=".activities.MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.newsnap.MainActivity" />
+                android:value=".activities.MainActivity" />
         </activity>
         <activity
-            android:name=".NewReplyActivity"
+            android:name=".activities.NewReplyActivity"
             android:label="@string/title_activity_new_reply"
-            android:parentActivityName=".ThreadActivity" >
+            android:parentActivityName=".activities.ThreadActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.newsnap.ThreadActivity" />
+                android:value=".activities.ThreadActivity" />
         </activity>
     </application>
 
